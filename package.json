@@ -1,0 +1,12 @@
+{
+  "name": "ff_internal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass ketan.scss:css/style.css -w",
+    "pug": "pug katen.pug -w --pretty"
+  },
+  "author": "",
+  "license": "ISC"
+}

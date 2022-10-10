@@ -1,0 +1,347 @@
+doctype
+html(lang='en')
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="x-UA-COMPATIBLE", CONTENT="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.8")
+        link(rel="stylesheet", href="css/bootstrap.min.css")
+        link(rel="stylesheet", href="css/style.css")
+        link(rel="stylesheet", href="assets/fontawesome-free-6.1.1-web/css/all.min.css")
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com crossorigin")
+        link(rel="stylesheet", href="css/swiper-bundle.min.css")
+        link(href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet")
+        include includes/mixin.pug
+        title katen
+        
+    body
+        .blog-header
+            .container
+                .row.justify-content-between.align-items-center
+                    .col-4
+                        +icons
+                    .col-4
+                        .blog__logo
+                            .logo__wrapper
+                                img(src="images/avatar-lg.png")
+                            .blog__title
+                                a(href="#",class="text-decoration-none")
+                                    h2 katen
+                                        span
+                                p Minimal Blog & Magazine WordPress Theme
+                    .col-4
+                        .blog__search
+                            a(href="#") <i class="fa-solid fa-magnifying-glass"></i>
+                            button(class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+                                span(class="navbar-toggler-icon") 
+                                    <i class="fa-solid fa-bars"></i>
+        header
+            .container
+                hr
+                <ul class=" me-auto ms-auto mb-2 mb-lg-0 d-flex list-unstyled content-between">
+                    <li class="nav-item dropdown active">
+                        <a class="dropdown-toggle btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        | home
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" ahref="#">magazine</a></li>
+                            <li><a class="dropdown-item pers" href="#">personal</a></li>
+                            <li><a class="dropdown-item" href="#">personal alt</a></li>
+                            <li><a class="dropdown-item" href="#">classic</a></li>
+                            <li><a class="dropdown-item" href="#">minimal</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class= active" aria-current="page" href="#">life style</a>
+                    </li>
+                    <li class="nav-item">
+                        <a  href="#">culture</a>
+                    </li>
+
+                    <li class="nav-item dropdown items">
+                        <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        | features
+                        </a>
+                        <ul class="dropdown-menu main">
+                            <li class="list d-flex justify-content-between align-items-center">
+                                a(class="dropdown-item" href="#") post layouts
+                                <i class="fa-solid fa-chevron-right"></i></a>
+                                ul.dropdown-menu.top-0.start-100
+                                    li 
+                                        a(href="#") standard
+                                    li 
+                                        a(href="#") full cover
+                            </li>
+                            <li class="list d-flex justify-content-between align-items-center">
+                                a(class="dropdown-item right" href="#") post formats
+                                <i class="fa-solid fa-chevron-right"></i></a>
+                                ul.dropdown-menu
+                                    li 
+                                        a(href="#") standard
+                                    li 
+                                        a(href="#") gallery
+                                    li 
+                                        a(href="#") video 
+                                    li 
+                                        a(href="#") audio       
+                            </li>
+                            <li class="list d-flex justify-content-between align-items-center">    
+                                a(class="dropdown-item right" href="#") archive 
+                                <i class="fa-solid fa-chevron-right"></i>
+                                            
+                                ul.dropdown-menu.top-50.start-100
+                                    li 
+                                        a(href="#") list
+                                    li 
+                                        a(href="#") grid
+                                    li 
+                                        a(href="#") classic 
+                                    li 
+                                        a(href="#") wide thub 
+                            
+                            </li>
+                            <li><a class="dropdown-item" href="#">auther page</a></li>
+                            <li><a class="dropdown-item" href="#">paginated post </a></li>
+                            <li><a class="dropdown-item" href="#">404 page</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">contact</a>
+                    </li>
+                </ul>
+        .articles.me-3.ms-3
+            .swiper.articles__slider.row
+                .swiper-wrapper
+                    .swiper-slide
+                            +imagetext("celebration","want to have a more appealing tattoo","august 16, 2022")
+                            .photo-wrapper 
+                                img(src="images/first.jpg")
+                    .swiper-slide
+                        +imagetext("politic", "your light is about to stop being relvant","august 23,2022")
+                        .photo-wrapper 
+                            img(src="images/culture.jpg")
+                    .swiper-slide
+                        +imagetext("politic","15 unheard ways to achieve greater walker","august 24,2022")
+                        .photo-wrapper 
+                            img(src="images/culture2.jpg")
+                    .swiper-slide
+                        +imagetext("culture","how to buy bulb on a tight budget","august 23,2022")
+                        .photo-wrapper 
+                            img(src="images/culture4.jpg")
+                    .swiper-slide
+                        +imagetext("lifestyle", "10 ways to immediately start selling furniture","august 23,2022")
+                        .photo-wrapper 
+                            img(src="images/culture1.jpg")
+                    .swiper-slide
+                        +imagetext("culture", "feel like a pro with the help of these 7 tips ","august 23,2022")
+                        .photo-wrapper 
+                            img(src="images/joel-filipe.jpg")
+                .swiper-btns.pt-5
+                        .swiper-pagination.main-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal
+                            span(class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1" aria-current="true")
+                            span(class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2")
+                            span(class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3")
+        .blog-body.pt-5
+            .container.ps-5.pe-5
+                .row.pt-4
+                    .col-xl-4.col-lg-6
+                        .blog__post
+                            .post__photo 
+                                img(src="images/reports1.jpg")
+                            span.icon <i class="fa-regular fa-image"></i>
+                            +details("lifestyle","30 august 2022","how to learn evey thing about construction")
+                        .blog__post
+                            .post__photo 
+                                img(src="images/reports3.jpg")
+                            +details("lifestyle","30 august 2022","Here Are 8 Ways To Success Faster")
+                        .blog__post
+                            .post__photo 
+                                img(src="images/reports5.jpg")
+                            +details("lifestyle","30 august 2022","3 Easy Ways To Make Your iPhone Faster")
+                        .blog__post
+                            .post__photo 
+                                img(src="images/reports7.jpg")
+                            span.icon <i class="fa-solid fa-video"></i>
+                            +details("lifestyle","30 august 2022","Facts About Business That Will Help You Success")
+                        .blog__post
+                            .post__photo 
+                                img(src="images/reports9.jpg")
+                            +details("lifestyle","30 august 2022","Facts About Business That Will Help You Success")                    
+                    .col-xl-4.col-lg-6
+                        .blog__post
+                            .post__photo 
+                                img(src="images/reports2.jpg")
+                            +details("lifestyle","29 august 2022","Master The Art Of Nature With These 7 Tips")
+                        .blog__post
+                            .post__photo 
+                                img(src="images/reports4.jpg")
+                            span.icon <i class="fa-regular fa-image"></i>
+                            +details("lifestyle","29 august 2022","60 Things To Immediately Do About Building")
+                        .blog__post
+                            .post__photo 
+                                img(src="images/reports6.jpg")
+                            +details("lifestyle","29 august 2022","15 Unheard Ways To Achieve Greater Walker")
+                        .blog__post
+                            .post__photo 
+                                img(src="images/reports8.jpg")
+                            +details("lifestyle","29 august 2022","Your Light Is About To Stop Being Relevant")
+                        .blog__post
+                            .post__photo 
+                                img(src="images/reports10.jpg")
+                            +details("lifestyle","29 august 2022","Feel Like A Pro With The Help Of These 7 Tips")
+                    .col-xl-4.col-lg-12
+                        .about
+                            .about__photo
+                                img(src="images/map-bg.png")
+                            .about__us
+                                h2 katen
+                                    span
+                                p Hello, We’re content writer who is fascinated by content fashion, celebrity and lifestyle. We helps clients bring the right content to the right people.
+                                ul.list-unstyled.d-flex.justify-content-center
+                                    li: a(href="#")
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                        
+                                    li: a(href="#")
+                                        <i class="fa-brands fa-twitter"></i>
+                                        
+                                    li: a(href="#")
+                                        <i class="fa-brands fa-instagram"></i>
+                                        
+                                    li: a(href="#")
+                                        <i class="fa-brands fa-pinterest"></i>
+                                        
+                                        
+                                    li: a(href="#")
+                                        <i class="fab fa-medium""></i>
+                                        
+                                    li: a(href="#")
+                                        <i class="fa-brands fa-youtube"></i>
+                        .popular
+                            +abouthead("popular posts")
+                            .popular__post
+                                .popular__photo
+                                    span 1
+                                    img(src="images/reports5.jpg")
+                                +aboutbody("3 Easy Ways To Make Your iPhone Faster","26 august 2022")
+                            .popular__post
+                                .popular__photo
+                                    span 2
+                                    img(src="images/reports7.jpg")
+                                +aboutbody("Facts About Business That Will Help You Success","23 august 2022")
+                            .popular__post
+                                .popular__photo
+                                    span 3
+                                    img(src="images/reports6.jpg")
+                                +aboutbody("15 Unheard Ways To Achieve Greater Walker","24 august 2022")
+                            
+                        .topics
+                            +abouthead("explore topics")
+                            +topic("celebration","(2)")
+                            +topic("culture","(2)")
+                            +topic("fashion","(1)")
+                            +topic("inspiration","(2)")
+                            +topic("lifestyle","(6)")
+                            +topic("politic","(2)")
+                            +topic("trending","(2)")
+                        .subscribe
+                            +abouthead("newsletter")
+                            h4 join 70.000 subscribers!
+                            input(type="email" placeholder="Email address...")
+                            input(type="submit" value="sign up")
+                            p By signing up, you agree to our 
+                                span  Privacy Policy
+                        .fashion
+                            +abouthead("celebration")
+                            .swiper.fashion-celebration
+                                .swiper-wrapper
+                                    .swiper-slide.ps-0.pe-0
+                                        .fashion__photo
+                                            span celebration
+                                            img(src="images/celebration1.jpg") 
+                                        .fashion__head
+                                            h3 what can we do about fashion right now
+                                            .name
+                                                p katen doe  
+                                                    span.dot
+                                                span.date 17 august 2022
+                                            
+                                    .swiper-slide
+                                            .fashion__photo
+                                                span celebration
+                                                img(src="images/celebration2.jpg") 
+                                            .fashion__head
+                                                h3 want to have a more appealing tattoo
+                                                .name
+                                                    p katen doe 
+                                                        span.dot 
+                                                    span.date 16 august 2022
+                                <div class="swiper-button-prev main-slider-btns" tabindex="0" role="button" aria-label="Previous slide" aria-controls="swiper-wrapper-71b577cf009a10c19">
+                                        
+                                    </div>
+                                <div class="swiper-button-next main-slider-btns" tabindex="0" role="button" aria-label="Next slide" aria-controls="swiper-wrapper-452897132f0996fb">
+                                        
+                                    </div>           
+                        .ads.mt-5
+                            span -sponsored ad - 
+                            a(href="#" class="ads__photo")
+                                img(src="images/ad-360.png")
+                        .tags
+                            +abouthead("tag clouds")
+                            ul.list-unstyled.d-flex
+                                each tag in["#audio","#content","#featurd", "#image","#inspiration","#lifestyle","#photo","#pick","#slide","#trending"]
+                                    li  
+                                        a(href="#" class="text-decoration-none")=tag
+                .page
+                    .col-8
+                        .number
+                            a(href="#") 1
+                            a(href="#") 2
+                            a(href="#") <i class="fa-solid fa-angles-right"></i>
+        .instagram
+            a(href="#" class="text-decoration-none"): h3 @ketan on instagram
+            .container.ps-5.pe-5
+                .row.pt-4    
+                    .col-2 
+                        a(href="#" class="instagram__photo")
+                            img(src="images/instagram1.jpg")
+                    .col-2
+                        a(href="#" class="instagram__photo")
+                            img(src="images/instagram2.jpg")
+                    .col-2
+                        a(href="#" class="instagram__photo")
+                            img(src="images/reports9.jpg")
+                    .col-2
+                        a(href="#" class="instagram__photo")
+                            img(src="images/instagram4.jpg")
+                    .col-2
+                        a(href="#" class="instagram__photo")
+                            img(src="images/instagram5.jpg")
+                    .col-2
+                        a(href="#" class="instagram__photo")
+                            img(src="images/instagram6.jpg")
+        .footer  
+            .container.ps-5.pe-5
+                .row.mt-5
+                    .col-4
+                        .design © 2022 Katen. Theme by ThemeGer.
+                    .col-4
+                        +icons
+                    .col-4
+                        .up
+                            a(href="#") <i class="fa-solid fa-chevron-left"></i> back to top
+                        
+
+
+
+    script(src="assets/fontawesome-free-6.1.1-web/js/all.min.js")
+    script(src="/js/swiper-bundle.min.js")
+    script(src="/js/bootstrap.bundle.min.js")
+    script(src="/js/bootstrap.bundle.min.js.map")
+    script(src="/js/katen.js")
+    
+
+            
+//.row.pb-5.ps-5.pe-5
+                            
+
