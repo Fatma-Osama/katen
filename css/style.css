@@ -13,7 +13,7 @@ body {
 }
 
 .blog-header {
-  margin: 30px;
+  margin: 32px;
 }
 .blog-header ul li {
   margin-right: 20px;
@@ -21,6 +21,7 @@ body {
 .blog-header ul li a {
   color: var(--head-color);
   transition: color ease-in-out 0.5s;
+  font-size: 18px;
 }
 .blog-header ul li a:hover {
   color: var(--main-color);
@@ -31,15 +32,19 @@ body {
 .blog-header .blog__logo img {
   object-fit: cover;
   aspect-ratio: 1;
+  width: 90px;
+  min-width: 80px;
 }
 .blog-header .blog__logo h2 {
   font-weight: 700;
-  font-size: 30px;
+  font-size: 35px;
   color: var(--head-color);
   position: relative;
-  line-height: 100%;
   margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: -20px;
   display: inline-block;
+  text-transform: capitalize;
 }
 .blog-header .blog__logo h2 span {
   background-color: var(--main-color);
@@ -71,6 +76,9 @@ body {
   justify-content: center;
   margin-right: 15px;
 }
+.blog-header .blog__search a:hover {
+  background: var(--back-back);
+}
 .blog-header .blog__search button {
   background: var(--back-ground);
   display: inline-flex;
@@ -80,13 +88,18 @@ body {
   height: 40px;
   justify-content: center;
   line-height: 1.5;
+  border: nonegit;
+}
+.blog-header .blog__search button:hover {
+  background: var(--back-back);
 }
 
 header {
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 }
 header hr {
   background-color: var(--para-color);
+  margin-bottom: 20px;
 }
 header ul {
   text-transform: capitalize;
@@ -296,6 +309,7 @@ header .items .list .dropdown-menu li:hover a {
   transition: all ease-in-out 0.5s;
 }
 .blog-body .blog__post .post__photo {
+  border-radius: 10px 10px 0 0;
   overflow: hidden;
 }
 .blog-body .blog__post .post__photo:hover img {
