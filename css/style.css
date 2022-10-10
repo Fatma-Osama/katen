@@ -233,10 +233,28 @@ header .items .list .dropdown-menu li:hover a {
   margin: 15px auto;
 }
 .articles .swiper-slide .ad-content .detail {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
   color: rgba(255, 255, 255, 0.5);
+  align-items: baseline;
 }
-.articles .swiper-slide .ad-content span {
-  color: rgba(255, 255, 255, 0.5);
+.articles .swiper-slide .ad-content .detail p {
+  font-size: 16px;
+  position: relative;
+}
+.articles .swiper-slide .ad-content .detail p:hover {
+  color: var(--main-color);
+}
+.articles .swiper-slide .ad-content .detail p span.dott {
+  background-color: var(--main-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  width: 5px;
+  height: 5px;
+  color: #fff;
 }
 .articles .swiper-slide .photo-wrapper {
   margin-bottom: 20px;

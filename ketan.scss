@@ -263,12 +263,26 @@ header{
             margin: 15px auto;
         }
         .detail{
-        color: rgba(255,255,255,.5);
-        }
-        span{
+            display: flex;
+            justify-content: center;
+            gap: 30px;
             color: rgba(255,255,255,.5);
+            align-items: baseline;
+            p{
+                &:hover{
+                    color: var(--main-color);
+                }
+                font-size: 16px;
+                position: relative;
+            span.dott{
+                @include poin();
+                width: 5px;
+                height: 5px;
+                color: #fff;
+            }
+            }
+            
         }
-
         }
         .photo-wrapper{
             
