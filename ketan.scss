@@ -28,7 +28,7 @@
     text-transform: capitalize;
     position: relative;
     align-items: center;
-    overflow: hidden;
+    //overflow: hidden;
     display: inline-block;
 }
 @mixin poin{
@@ -174,10 +174,8 @@ header{
                 visibility: visible;
             }
             @include btn();
-            
             margin: 0;
             position: relative;
-
             .btn{
                 &:hover{
                     color: #fff;
@@ -220,11 +218,10 @@ header{
         font-size: 14px;
         display: block;
         transition: all ease-in 0.25s;
-        opacity: 0;
+       // opacity: 0;
         width: 14rem;
-        visibility: hidden;
-        z-index: 5;
-        top: 105%;
+       // visibility: hidden;
+        top: 0;
         li{
             &:hover a{
                 color: var(--main-color);

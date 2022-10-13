@@ -143,7 +143,6 @@ header ul .active {
   text-transform: capitalize;
   position: relative;
   align-items: center;
-  overflow: hidden;
   display: inline-block;
   margin: 0;
   position: relative;
@@ -194,11 +193,8 @@ header .dropdown-menu {
   font-size: 14px;
   display: block;
   transition: all ease-in 0.25s;
-  opacity: 0;
   width: 14rem;
-  visibility: hidden;
-  z-index: 5;
-  top: 105%;
+  top: 0;
 }
 header .dropdown-menu::after {
   content: "";
@@ -295,7 +291,6 @@ header .items .list .dropdown-menu li:hover a {
   text-transform: capitalize;
   position: relative;
   align-items: center;
-  overflow: hidden;
   display: inline-block;
   font-size: 14px;
 }
@@ -432,7 +427,6 @@ header .items .list .dropdown-menu li:hover a {
   text-transform: capitalize;
   position: relative;
   align-items: center;
-  overflow: hidden;
   display: inline-block;
   font-size: 14px;
   position: absolute;
@@ -722,7 +716,6 @@ header .items .list .dropdown-menu li:hover a {
   text-transform: capitalize;
   position: relative;
   align-items: center;
-  overflow: hidden;
   display: inline-block;
   top: 30px;
   left: 20px;
@@ -917,7 +910,6 @@ header .items .list .dropdown-menu li:hover a {
   text-transform: capitalize;
   position: relative;
   align-items: center;
-  overflow: hidden;
   display: inline-block;
   display: inline-block;
   font-size: 16px;
