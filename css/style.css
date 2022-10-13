@@ -2,9 +2,9 @@
   --head-color: #203656;
   --para-color: #8f9bad;
   --main-color: #fe4f70;
-  --back-ground: linear-gradient(to right,#fe4f70 0%,#ffa387 100%);
+  --back-ground: linear-gradient(to right, rgb(254, 79, 112) 0%, rgb(255, 163, 135) 100%);
   --border-color: #ebebeb;
-  --back-back: linear-gradient(to left,#fe4f70 0%,#ffa387 100%);
+  --back-back: linear-gradient(to left, rgb(254, 79, 112) 0%, rgb(255, 163, 135) 100%);
 }
 
 body {
@@ -13,7 +13,7 @@ body {
 }
 
 .blog-header {
-  margin: 32px;
+  margin: 40px 0;
 }
 .blog-header ul li {
   margin-right: 20px;
@@ -59,13 +59,17 @@ body {
   color: var(--para-color);
   font-size: 14px;
   font-weight: 500;
+  padding: 0;
+  margin: 0;
 }
 .blog-header .blog__search {
   justify-content: flex-end;
   text-align: end;
+  align-items: center;
+  display: flex;
 }
 .blog-header .blog__search a {
-  background: var(--back-ground);
+  background: linear-gradient(to top, #ffa387 0%, #fe4f70 51%, #ffa387 100%);
   width: 40px;
   text-align: center;
   display: inline-flex;
@@ -77,21 +81,46 @@ body {
   margin-right: 15px;
 }
 .blog-header .blog__search a:hover {
-  background: var(--back-back);
+  background: linear-gradient(to top, #ffa387 10%, #fe4f70 100%, #ffa387 0%);
 }
 .blog-header .blog__search button {
-  background: var(--back-ground);
-  display: inline-flex;
+  background: linear-gradient(to left, #fe4f70 0%, #ffa387 100%);
   color: #fff;
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  justify-content: center;
-  line-height: 1.5;
-  border: nonegit;
+  border: none;
+  position: relative;
+  transition: all ease-in-out 0.85s;
+  overflow: hidden;
 }
-.blog-header .blog__search button:hover {
-  background: var(--back-back);
+.blog-header .blog__search button::after {
+  content: "";
+  background: linear-gradient(to top, #ffa387 0%, #fe4f70 100%, #ffa387 0%);
+  background-size: 100% 100%;
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 0%;
+  transition: all ease-in-out 0.25s;
+  z-index: 2;
+  border-radius: 50%;
+}
+.blog-header .blog__search button:hover::after {
+  height: 100%;
+}
+.blog-header .blog__search button span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: none;
 }
 
 header {
@@ -107,18 +136,42 @@ header ul {
   width: fit-content;
 }
 header ul .active {
-  background: linear-gradient(to right, #fe4f70 0%, #ffa387 100%);
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+  background: var(--back-ground);
+  padding: 0.5rem 1rem;
   color: #fff;
   border-radius: 25px;
   text-transform: capitalize;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+  display: inline-block;
+  margin: 0;
+  position: relative;
+  transition: all ease-in-out 3s;
 }
 header ul .active:hover .dropdown-menu {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+header ul .active::after {
+  content: "";
+  background: linear-gradient(to left, rgb(254, 79, 112) 0%, rgb(255, 163, 135) 100%);
+  position: absolute;
+  right: -100%;
+  bottom: 0px;
+  width: 0%;
+  height: 100%;
+  transition: all ease-in-out 0.8s;
+  z-index: 2;
+  border-radius: 25px;
+  overflow: hidden;
 }
 header ul .active .btn {
   color: #fff;
+  transition: all ease-in-out 0.3s;
+  padding: 0;
+  margin: 0 5px;
+  position: relative;
 }
 header ul .active .btn:hover {
   color: #fff;
@@ -138,15 +191,21 @@ header .dropdown-menu {
   margin: 0;
   padding: 0;
   border: none;
-  width: 14rem;
   font-size: 14px;
+  display: block;
+  transition: all ease-in 0.25s;
+  opacity: 0;
+  width: 14rem;
+  visibility: hidden;
+  z-index: 5;
+  top: 105%;
 }
 header .dropdown-menu::after {
   content: "";
   position: absolute;
-  top: -22px;
-  left: 23%;
-  border: 12px solid;
+  top: -25px;
+  left: 10%;
+  border: 15px solid;
   border-color: transparent transparent #fff transparent;
 }
 header .dropdown-menu li {
@@ -181,7 +240,8 @@ header .dropdown-menu li .pers {
   color: var(--main-color);
 }
 header .items:hover .main {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 header .items a {
   color: var(--para-color);
@@ -190,7 +250,8 @@ header .items .list {
   position: relative;
 }
 header .items .list:hover .dropdown-menu {
-  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 header .items .list:hover .dropdown-menu a {
   color: var(--para-color);
@@ -227,16 +288,33 @@ header .items .list .dropdown-menu li:hover a {
   height: 100px;
 }
 .articles .swiper-slide .ad-content .button {
-  background: linear-gradient(to right, #fe4f70 0%, #ffa387 100%);
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+  background: var(--back-ground);
+  padding: 0.5rem 1rem;
   color: #fff;
   border-radius: 25px;
   text-transform: capitalize;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+  display: inline-block;
   font-size: 14px;
 }
-.articles .swiper-slide .ad-content .button:hover {
-  background: var(--back-back);
+.articles .swiper-slide .ad-content .button:hover::after {
+  height: 100%;
+  width: 200%;
+}
+.articles .swiper-slide .ad-content .button::after {
+  content: "";
+  background: linear-gradient(to left, rgb(254, 79, 112) 0%, rgb(255, 163, 135) 100%);
+  position: absolute;
+  right: -100%;
+  bottom: 0px;
+  width: 0%;
+  height: 100%;
+  transition: all ease-in-out 0.8s;
+  z-index: 2;
+  border-radius: 25px;
+  overflow: hidden;
 }
 .articles .swiper-slide .ad-content a h3 {
   color: #fff;
@@ -248,11 +326,13 @@ header .items .list .dropdown-menu li:hover a {
 .articles .swiper-slide .ad-content .detail {
   display: flex;
   justify-content: center;
-  gap: 30px;
   color: rgba(255, 255, 255, 0.5);
   align-items: baseline;
+  flex-wrap: wrap;
 }
 .articles .swiper-slide .ad-content .detail p {
+  margin-right: 30px;
+  margin-bottom: 8px;
   font-size: 16px;
   position: relative;
 }
@@ -267,7 +347,7 @@ header .items .list .dropdown-menu li:hover a {
   right: -20px;
   width: 5px;
   height: 5px;
-  color: #fff;
+  background-color: var(--para-color);
 }
 .articles .swiper-slide .photo-wrapper {
   margin-bottom: 20px;
@@ -311,6 +391,8 @@ header .items .list .dropdown-menu li:hover a {
 .blog-body .blog__post .post__photo {
   border-radius: 10px 10px 0 0;
   overflow: hidden;
+  position: relative;
+  z-index: -1;
 }
 .blog-body .blog__post .post__photo:hover img {
   transform: scale(1.1);
@@ -322,11 +404,11 @@ header .items .list .dropdown-menu li:hover a {
 }
 .blog-body .blog__post .icon {
   position: absolute;
-  top: 39%;
+  top: 38%;
   right: 7%;
   background: var(--back-ground);
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -340,21 +422,38 @@ header .items .list .dropdown-menu li:hover a {
   padding: 30px 30px 0;
   border: 1px solid rgba(143, 155, 173, 0.136);
   border-radius: 0 0 10px 10px;
+  position: relative;
 }
 .blog-body .blog__post .post__content .button {
-  background: linear-gradient(to right, #fe4f70 0%, #ffa387 100%);
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+  background: var(--back-ground);
+  padding: 0.5rem 1rem;
   color: #fff;
   border-radius: 25px;
   text-transform: capitalize;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+  display: inline-block;
   font-size: 14px;
   position: absolute;
-  top: 20px;
+  top: -70%;
   left: 20px;
 }
-.blog-body .blog__post .post__content .button:hover {
-  background: var(--back-back);
+.blog-body .blog__post .post__content .button:hover::after {
+  width: 200%;
+}
+.blog-body .blog__post .post__content .button::after {
+  content: "";
+  background: linear-gradient(to left, rgb(254, 79, 112) 0%, rgb(255, 163, 135) 100%);
+  position: absolute;
+  right: -100%;
+  bottom: 0px;
+  width: 0%;
+  height: 100%;
+  transition: all ease-in-out 0.8s;
+  z-index: 2;
+  border-radius: 25px;
+  overflow: hidden;
 }
 .blog-body .blog__post .post__content .head {
   color: var(--para-color);
@@ -616,17 +715,33 @@ header .items .list .dropdown-menu li:hover a {
 }
 .fashion__photo span {
   position: absolute;
-  background: linear-gradient(to right, #fe4f70 0%, #ffa387 100%);
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+  background: var(--back-ground);
+  padding: 0.5rem 1rem;
   color: #fff;
   border-radius: 25px;
   text-transform: capitalize;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+  display: inline-block;
   top: 30px;
   left: 20px;
   font-size: 14px;
   text-transform: capitalize;
   z-index: 8;
+}
+.fashion__photo span::after {
+  content: "";
+  background: linear-gradient(to left, rgb(254, 79, 112) 0%, rgb(255, 163, 135) 100%);
+  position: absolute;
+  right: -100%;
+  bottom: 0px;
+  width: 0%;
+  height: 100%;
+  transition: all ease-in-out 0.8s;
+  z-index: 2;
+  border-radius: 25px;
+  overflow: hidden;
 }
 .fashion__photo img {
   border-radius: 10px;
@@ -795,12 +910,15 @@ header .items .list .dropdown-menu li:hover a {
   padding-right: 20px;
 }
 .instagram a h3 {
-  background: linear-gradient(to right, #fe4f70 0%, #ffa387 100%);
-  padding-right: 0.75rem;
-  padding-left: 0.75rem;
+  background: var(--back-ground);
+  padding: 0.5rem 1rem;
   color: #fff;
   border-radius: 25px;
   text-transform: capitalize;
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+  display: inline-block;
   display: inline-block;
   font-size: 16px;
   padding: 0.75rem 2rem;
@@ -808,6 +926,19 @@ header .items .list .dropdown-menu li:hover a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.instagram a h3::after {
+  content: "";
+  background: linear-gradient(to left, rgb(254, 79, 112) 0%, rgb(255, 163, 135) 100%);
+  position: absolute;
+  right: -100%;
+  bottom: 0px;
+  width: 0%;
+  height: 100%;
+  transition: all ease-in-out 0.8s;
+  z-index: 2;
+  border-radius: 25px;
+  overflow: hidden;
 }
 .instagram a h3:hover {
   background: var(--back-back);

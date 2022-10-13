@@ -15,19 +15,22 @@ var item = new Swiper(".articles__slider", {
         slideShadows: false
     },*/
     breakpoints: {
-    400:{
+    570:{
         slidesPerView: 1
     },
-    600: {
-        slidesPerView: 2,
+    600:{
+        slidesPerView: 2
     },
-    750: {
+    790: {
         slidesPerView: 3,
     },
-    950: {
+    1100: {
         slidesPerView: 4,
     },
-        1400: {
+    1450: {
+        slidesPerView: 5,
+    },
+        1450: {
             slidesPerView: 5
         }
     },

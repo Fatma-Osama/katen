@@ -16,7 +16,7 @@ html(lang='en')
         
     body
         .blog-header
-            .container.ps-5.pe-5
+            .container
                 .row.justify-content-between.align-items-center
                     .col-4
                         +icons
@@ -36,7 +36,7 @@ html(lang='en')
                                 span(class="navbar-toggler-icon") 
                                     <i class="fa-solid fa-bars"></i>
         header
-            .container.ps-5.pe-5
+            .container
                 hr
                 <ul class=" me-auto ms-auto mb-2 mb-lg-0 d-flex list-unstyled content-between">
                     <li class="nav-item dropdown active">
@@ -144,12 +144,12 @@ html(lang='en')
                             span(class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3")
         .blog-body.pt-5
             .container.ps-5.pe-5
-                .row.pt-4
+                .row.pt-4 
                     .col-xl-4.col-lg-6
                         .blog__post
                             .post__photo 
                                 img(src="images/reports1.jpg")
-                            span.icon <i class="fa-regular fa-image"></i>
+                                    span.icon<i class="fa-regular fa-image"></i>
                             +details("lifestyle","30 august 2022","how to learn evey thing about construction")
                         .blog__post
                             .post__photo 
